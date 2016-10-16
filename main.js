@@ -34,16 +34,14 @@ var renderQuestion = function(question) {
     switch (question.type) {
         case "text":
             var text = question.text;
-            console.log(question.id);
-            console.log(data.answers);
             if(question.id == 'name' && data.answers['returning'] == 'Been here before'){
                 text = 'Welcome back!';
             }
             var placeholder = data.answers[question.id] == undefined ? '' : data.answers[question.id];
             $("#" + question.id + "-wrapper").append(`
                 <div class="form-group">
-                    <label class="col-md-2 control-label">` + text + `</label>
-                    <div class="col-md-10">
+                    <label class="label-padding control-label">` + text + `</label>
+                    <div class="col-lg-12">
                         <input type="text" class="form-control" id="` + question.id + `" onkeypress="textInput('` + question.id + `', event)" placeholder="` + placeholder + `">
                     </div>
                 </div>
@@ -53,8 +51,8 @@ var renderQuestion = function(question) {
             var placeholder = data.answers[question.id] == undefined ? '' : data.answers[question.id];
             $("#" + question.id + "-wrapper").append(`
                 <div class="form-group">
-                    <label  class="col-md-2 control-label">` + question.text + `</label>
-                    <div class="col-md-10">
+                    <label  class="label-padding control-label">` + question.text + `</label>
+                    <div class="col-md-12">
                         <input type="number" class="form-control" id="` + question.id + `" onkeypress="textInput('` + question.id + `', event)" placeholder="` + placeholder + `">
                     </div>
                 </div>
@@ -64,8 +62,8 @@ var renderQuestion = function(question) {
             var placeholder = data.answers[question.id] == undefined ? '' : data.answers[question.id];
             $("#" + question.id + "-wrapper").append(`
                 <div class="form-group">
-                    <label  class="col-md-2 control-label">` + question.text + `</label>
-                    <div class="col-md-10">
+                    <label  class="label-padding control-label">` + question.text + `</label>
+                    <div class="col-md-12">
                         <input type="date" class="form-control" id="` + question.id + `" onkeypress="textInput('` + question.id + `', event)" placeholder="` + placeholder + `">
                     </div>
                 </div>
@@ -74,9 +72,9 @@ var renderQuestion = function(question) {
         case "boolean":
             $("#" + question.id + "-wrapper").append(`
             <div class="form-group">
-            <label class="col-md-2 control-label">` + question.text + `</label>
+            <label class="label-padding control-label">` + question.text + `</label>
 
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <a href="javascript:void(0)" class="btn btn-raised btn-default" onclick="next('` + question.id + `',true)">` + question.answers.true + `</a>
                 <a href="javascript:void(0)" class="btn btn-raised btn-default" onclick="next('` + question.id + `', false)">` + question.answers.false + `</a>
             </div>
@@ -86,9 +84,9 @@ var renderQuestion = function(question) {
         case "intro":
             $("#" + question.id + "-wrapper").append(`
             <div class="form-group">
-            <label class="col-md-2 control-label">` + question.text + `</label>
+            <label class="label-padding control-label">` + question.text + `</label>
 
-            <div class="col-md-10" style="text-align: center">
+            <div class="col-md-12" style="text-align: center">
                 <a href="javascript:void(0)" class="btn btn-raised btn-primary" onclick="next('` + question.id + `',true)">` + question.answers.true + `</a>
                 <a href="javascript:void(0)" class="btn btn-raised btn-primary" onclick="next('` + question.id + `', false)">` + question.answers.false + `</a>
             </div>

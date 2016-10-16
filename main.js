@@ -34,7 +34,11 @@ var renderQuestion = function(question) {
     switch (question.type) {
         case "text":
             var text = question.text;
-            if(question.id == 'name' && data.answers['returning'] == 'Been here before'){
+            console.log(question.id);
+            console.log(data.answers.returning);
+            console.log(data.answers);
+            console.log(data.answers["returning"]);
+            if(question.id == 'name' && data.answers.returning){
                 text = 'Welcome back!';
             }
             var placeholder = data.answers[question.id] == undefined ? '' : data.answers[question.id];
@@ -87,6 +91,10 @@ var renderQuestion = function(question) {
             <label class="label-padding control-label">` + question.text + `</label>
 
             <div class="col-md-12" style="text-align: center">
+                <div class="row">
+                    <img src="sara.png" style="height: 125px"/>
+                    <br/><br/>
+                </div>
                 <a href="javascript:void(0)" class="btn btn-raised btn-primary" onclick="next('` + question.id + `',true)">` + question.answers.true + `</a>
                 <a href="javascript:void(0)" class="btn btn-raised btn-primary" onclick="next('` + question.id + `', false)">` + question.answers.false + `</a>
             </div>
@@ -100,17 +108,51 @@ var renderQuestion = function(question) {
                 <div class="col-sm-8">
                     <div class="row">
                         <div class="well">
-                            Humana Plan C
+                            <div class="row">
+                                <h3>Humana Plan C</h3>
+                                <div style="float: right; vertical-align: middle; color: green">
+                                    <i class="material-icons">attach_money</i>
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                Coverage: 4 <br/>
+                                Premiums: 2 <br/>
+                                Flexibility: 3 <br/>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="well">
-                            Aetna Plan D
+                            <div class="row">
+                                <h3>Aetna Plan D</h3>
+                                <div style="float: right; vertical-align: middle; color: green">
+                                    <i class="material-icons">attach_money</i>
+                                    <i class="material-icons">attach_money</i>
+                                    <i class="material-icons">attach_money</i>
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                Coverage: 4 <br/>
+                                Premiums: 2 <br/>
+                                Flexibility: 3 <br/>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="well">
-                            Cigna Plan N
+                            <div class="row">
+                                <h3>Cigna Plan N</h3>
+                                <div style="float: right; vertical-align: middle; color: green">
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                Coverage: 4 <br/>
+                                Premiums: 2 <br/>
+                                Flexibility: 3 <br/>
+                            </div>
                         </div>
                     </div>
                     <a href="javascript:void(0)" class="btn btn-raised btn-success" style="text-align: center; width: 100%" onclick="next('` + question.id + `',true)">See Data</a>
@@ -141,6 +183,7 @@ var next = function(id, answer) {
     var question = questions[questions.length - 1];
     if (typeof answer === 'undefined') { answer = document.getElementById(id).value; }
     if(data.answers[id] == undefined) {
+        data.answers[id] = answer;
         if(question.next) {
             var nextQuestion = modules[modules.length - 1].questions[question.next];
             renderQuestion(nextQuestion);

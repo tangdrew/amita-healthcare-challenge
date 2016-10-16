@@ -34,10 +34,6 @@ var renderQuestion = function(question) {
     switch (question.type) {
         case "text":
             var text = question.text;
-            console.log(question.id);
-            console.log(data.answers.returning);
-            console.log(data.answers);
-            console.log(data.answers["returning"]);
             if(question.id == 'name' && data.answers.returning){
                 text = 'Welcome back!';
             }
@@ -355,7 +351,7 @@ var data = {
             "questions": {
                 "needs": {
                     "id": "needs",
-                    "text": "What is most important to you that your insurance provides?",
+                    "text": "What is most important to you that your insurance should provide?",
                     "type": "text",
                     "answers": {},
                     "next": null

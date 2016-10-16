@@ -102,10 +102,17 @@ var renderQuestion = function(question) {
             `)
             break;
         case "recommendation":
+            var recommendString = '';
+            if(parseInt(data.answers.income) > 10000){
+                recommendString = data.answers.name + ", we recommend Option 1 because of it's high coverage and flexibility.";
+            }
+            else {
+                recommendString = data.answers.name + ", we recommend Option 2 because of low monthly premiums.";
+            }
             $("#" + question.id + "-wrapper").append(`
             <div class="row" style="padding: 15px">
                 <h4 style="color: #259b24">
-                    ` + data.answers.name +`, we recommend Option 1 because of it's high coverage and flexibility.
+                    ` + recommendString +`
                 </h4>
             </div>
             <div class="row">
@@ -183,9 +190,9 @@ var renderQuestion = function(question) {
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Monthly Cost</td>
-                            <td>$500/month</td>
-                            <td>$400/month</td>
+                            <td>Total Monthly Cost</td>
+                            <td>$390/month</td>
+                            <td>$261/month</td>
                         </tr>
                         <tr>
                             <td></td>

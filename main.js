@@ -103,58 +103,103 @@ var renderQuestion = function(question) {
             break;
         case "recommendation":
             $("#" + question.id + "-wrapper").append(`
+            <div class="row" style="padding: 15px">
+                <h4 style="color: #259b24">
+                    ` + data.answers.name +`, we recommend Option 1 because of it's high coverage and flexibility.
+                </h4>
+            </div>
             <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <div class="row">
-                        <div class="well">
-                            <div class="row">
-                                <h3>Humana Plan C</h3>
-                                <div style="float: right; vertical-align: middle; color: green">
-                                    <i class="material-icons">attach_money</i>
-                                    <i class="material-icons">attach_money</i>
-                                </div>
-                            </div>
-                            <div class="row">
-                                Coverage: 4 <br/>
-                                Premiums: 2 <br/>
-                                Flexibility: 3 <br/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="well">
-                            <div class="row">
-                                <h3>Aetna Plan D</h3>
-                                <div style="float: right; vertical-align: middle; color: green">
-                                    <i class="material-icons">attach_money</i>
-                                    <i class="material-icons">attach_money</i>
-                                    <i class="material-icons">attach_money</i>
-                                    <i class="material-icons">attach_money</i>
-                                </div>
-                            </div>
-                            <div class="row">
-                                Coverage: 4 <br/>
-                                Premiums: 2 <br/>
-                                Flexibility: 3 <br/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="well">
-                            <div class="row">
-                                <h3>Cigna Plan N</h3>
-                                <div style="float: right; vertical-align: middle; color: green">
-                                    <i class="material-icons">attach_money</i>
-                                </div>
-                            </div>
-                            <div class="row">
-                                Coverage: 4 <br/>
-                                Premiums: 2 <br/>
-                                Flexibility: 3 <br/>
-                            </div>
-                        </div>
-                    </div>
+                <table class="table table-striped table-hover" style="text-align: center">
+                    <thead class="info">
+                        <tr>
+                            <th></th>
+                            <th style="text-align: center">
+                                Option 1
+                            </th>
+                            <th style="text-align: center">
+                                Option 2
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #ffc107">PART A</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Coverage</td>
+                            <td>Preventative Care</td>
+                            <td>Care Management</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Cost</td>
+                            <td>$250</td>
+                            <td>$173</td>
+                        </tr>
+                        <tr>
+                            <td>Copayment</td>
+                            <td>20%</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>Deductible</td>
+                            <td>$7500</td>
+                            <td>$5000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #ffc107">PART B</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Coverage</td>
+                            <td>Prescription Drug Z, X</td>
+                            <td>Prescription Drug Z, Y</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Cost</td>
+                            <td>$140</td>
+                            <td>$88</td>
+                        </tr>
+                        <tr>
+                            <td>Copayment</td>
+                            <td>30%</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>Deductible</td>
+                            <td>$2000</td>
+                            <td>$1000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Cost</td>
+                            <td>$500/month</td>
+                            <td>$400/month</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <a href="javascript:void(0)" class="btn btn-raised btn-success">Enroll</a>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" class="btn btn-raised btn-success">Enroll</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
                     <a href="javascript:void(0)" class="btn btn-raised btn-success" style="text-align: center; width: 100%" onclick="next('` + question.id + `',true)">See Data</a>
 
                 </div>

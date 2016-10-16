@@ -35,7 +35,7 @@ var renderQuestion = function(question) {
         case "text":
             var text = question.text;
             if(question.id == 'name' && data.answers.returning){
-                text = 'Welcome back!';
+                text = "Welcome back! What's your name";
             }
             var placeholder = data.answers[question.id] == undefined ? '' : data.answers[question.id];
             $("#" + question.id + "-wrapper").append(`

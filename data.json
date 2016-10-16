@@ -1,0 +1,44 @@
+{
+    "modules": {
+        "intro": {
+            "title": "",
+            "questions": {
+                "returning": {
+                    "text": "Have you used BLANK before?",
+                    "type": "boolean",
+                    "answers": {
+                        "true": "Been here before",
+                        "false": "It's my first time"
+                    },
+                    "next": null
+                }
+            }
+        },
+        "basicInfo": {
+            "title": "Basic Information",
+            "questions": {
+                "name": {
+                    "text": "I see you're new, who am I talking to?",
+                    "type": "text",
+                    "answers": {},
+                    "next": "address"
+                },
+                "address": {
+                    "text": "Where do you live?",
+                    "type": "text",
+                    "answers": {},
+                    "next": "gender"
+                },
+                "gender": {
+                    "text": "Male or female?",
+                    "type": "boolean",
+                    "answers": {
+                        "true": "Male",
+                        "false": "Female"
+                    }
+                    "next": null
+                }
+            }
+        }
+    }
+}
